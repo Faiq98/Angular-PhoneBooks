@@ -42,4 +42,12 @@ export class ApiService {
       catchError(this.handleError<Users>(`getUserById id=${id}`))
     );
   }
+
+  addUsers(users: Users): Observable<Users>{
+    const url = `${apiUrl}/signup`;
+    return this.http.post<Users>(url, users, httpOptions).pipe(
+      tap((u: Users)=>console.log(`Add user`)),
+      catchError(this.handleError<Users>('addUser'))
+    );
+  }
 }
