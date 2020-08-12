@@ -1,7 +1,38 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { UsersListComponent } from './components/users-list/users-list.component';
+import { UsersDetailsComponent } from './components/users-details/users-details.component';
+import { UsersAddComponent } from './components/users-add/users-add.component';
+import { UsersUpdateComponent } from './components/users-update/users-update.component';
+
+const routes: Routes = [
+  {
+    path: 'users',
+    component: UsersListComponent,
+    data: {title: 'List of Users'}
+  },
+  {
+    path: 'users/:id',
+    component: UsersDetailsComponent,
+    data: {title: 'Details of Users'}
+  },
+  {
+    path: 'add-user',
+    component: UsersAddComponent,
+    data: {title: 'Add Users'}
+  },
+  {
+    path: 'update-user/:id',
+    component: UsersUpdateComponent,
+    data: {title: 'Update Users Details'}
+  },
+  {
+    path: '',
+    redirectTo: '/users',
+    pathMatch: 'full'
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
