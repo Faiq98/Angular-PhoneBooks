@@ -1,6 +1,11 @@
 <h3>PhoneBook : Name List <button class="btn btn-warning" [routerLink]="['/add-user']">Add</button></h3><br>
 <hr>
-<div *ngFor="let user of data">
-    <p>{{user.first_name}} {{user.last_name}} <button class="btn btn-primary" style="float: right;" [routerLink]="['/users', user._id]">Open</button></p>
-    <hr>
+<div class="row" *ngFor="let user of data">
+    <div class="col">
+        <p>{{user.first_name}} {{user.last_name}}</p>
+        <hr>
+    </div>
+    <div class="col">
+        <button class="btn btn-primary" [routerLink]="['/users', user._id]">Open</button>&nbsp;<button class="btn btn-danger" [routerLink]="['/users', user._id]">Delete</button>
+    </div>
 </div>

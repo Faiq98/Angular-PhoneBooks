@@ -2,12 +2,18 @@
 <p>Email: {{user.email}}</p>
 <p>Contacts: <button class="btn btn-warning" [routerLink]="['/users/add-contact', user._id]">Add</button></p>
 <hr>
-<div *ngFor="let contact of user.contacts">
-    <ul>
-        <li>Name: {{contact.name}}</li>
-        <li>Phone No: {{contact.phone_no}}</li>
-        <li>Type: {{contact.type}}</li>
-        <li>Plan: {{contact.plan}}</li>
-    </ul>
-    <hr>
+<div class="row" *ngFor="let contact of user.contacts">
+    <div class="col">
+        <ul>
+            <li>Name: <b>{{contact.name}}</b></li>
+            <li>Phone No: {{contact.phone_no}}</li>
+            <li>Type: {{contact.type}}</li>
+            <li>Plan: {{contact.plan}}</li>
+        </ul>
+        <hr>
+    </div>
+    <div class="col">
+        <button class="btn btn-primary mb-2">Edit</button><br>
+        <button class="btn btn-danger">Delete</button>
+    </div>
 </div>
