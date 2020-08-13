@@ -11,7 +11,7 @@ import {Contacts} from '../model/contacts';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = 'http://localhost:3000/api/user' //api from Node-UserProfileAPI
+const apiUrl = 'http://localhost:3000/api' //api from Node-UserProfileAPI
 
 @Injectable({
   providedIn: 'root'
@@ -29,14 +29,14 @@ export class ApiService {
   }
 
   getUsersList(): Observable<Users[]>{
-    return this.http.get<Users[]>(`${apiUrl}`).pipe(
+    return this.http.get<Users[]>(`${apiUrl}/user`).pipe(
       tap(users => console.log('fetched users')),
       catchError(this.handleError('getUserList', []))
     );
   }
 
   getUserById(id: String): Observable<Users>{
-    const url = `${apiUrl}/${id}`;
+    const url = `${apiUrl}/user/${id}`;
     return this.http.get<Users>(url).pipe(
       tap(_=> console.log(`fetched user id=${id}`)),
       catchError(this.handleError<Users>(`getUserById id=${id}`))
@@ -44,10 +44,18 @@ export class ApiService {
   }
 
   addUsers(users: Users): Observable<Users>{
-    const url = `${apiUrl}/signup`;
+    const url = `${apiUrl}user/signup`;
     return this.http.post<Users>(url, users, httpOptions).pipe(
       tap((u: Users)=>console.log(`Add user`)),
       catchError(this.handleError<Users>('addUser'))
+    );
+  }
+
+  addContact(contacts: Contacts, id: String): Observable<Contacts>{
+    const url = `${apiUrl}/contact/${id}/create`;
+    return this.http.post<Contacts>(url, contacts, httpOptions).pipe(
+      tap((c: Contacts)=>console.log(`Add Contact`)),
+      catchError(this.handleError<Contacts>('addUser'))
     );
   }
 }

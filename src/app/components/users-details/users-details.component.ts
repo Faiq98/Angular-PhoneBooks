@@ -13,7 +13,7 @@ import { Contacts } from 'src/app/model/contacts';
 })
 export class UsersDetailsComponent implements OnInit {
 
-  user: Users = {first_name: '', last_name: '', email: '', contacts: []};
+  user: Users = {_id: '',first_name: '', last_name: '', email: '', contacts: []};
   isLoadingResults = true;
 
   constructor(private route: ActivatedRoute, private api: ApiService, private router: Router) { }

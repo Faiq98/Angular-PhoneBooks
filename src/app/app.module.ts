@@ -10,6 +10,7 @@ import { UsersDetailsComponent } from './components/users-details/users-details.
 import { UsersAddComponent } from './components/users-add/users-add.component';
 import { UsersUpdateComponent } from './components/users-update/users-update.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactsAddComponent } from './components/contacts-add/contacts-add.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UsersListComponent,
     UsersDetailsComponent,
     UsersAddComponent,
-    UsersUpdateComponent
+    UsersUpdateComponent,
+    ContactsAddComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { UsersListComponent } from './components/users-list/users-list.component
 import { UsersDetailsComponent } from './components/users-details/users-details.component';
 import { UsersAddComponent } from './components/users-add/users-add.component';
 import { UsersUpdateComponent } from './components/users-update/users-update.component';
+import { ContactsAddComponent } from './components/contacts-add/contacts-add.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
     path: 'update-user/:id',
     component: UsersUpdateComponent,
     data: {title: 'Update Users Details'}
+  },
+  {
+    path: 'users/add-contact/:id',
+    component: ContactsAddComponent,
+    data: {title: 'Add user contact list'}
   },
   {
     path: '',

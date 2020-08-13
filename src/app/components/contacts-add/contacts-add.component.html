@@ -1,0 +1,44 @@
+<h3>Add New Contact <button class="btn btn-warning" style="float: right;" [routerLink]="['/users']">Back</button></h3><br>
+<hr>
+<div class="container">
+    <form [formGroup]="contactForm" (ngSubmit)="onFormSubmit()">
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Name:</label>
+            </div>
+            <div class="col" style="float: left;">
+                <input type="text" formControlName="name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Phone No:</label>
+            </div>
+            <div class="col" style="float: left;">
+                <input type="text" formControlName="phone_no">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Type:</label>
+            </div>
+            <div class="col" style="float: left;">
+                <input type="text" formControlName="type">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Plan:</label>
+            </div>
+            <div class="col" style="float: left;">
+                <input type="text" formControlName="plan">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col">
+                <button class="btn btn-primary" type="submit">Add</button>&nbsp;<button class="btn btn-danger" type="reset">Clear</button>
+            </div>
+        </div>
+    </form>
+</div>
