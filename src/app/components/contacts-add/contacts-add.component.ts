@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../service/api.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Users } from '../../model/users';
+import { UsersListComponent } from '../users-list/users-list.component';
 
 @Component({
   selector: 'app-contacts-add',
@@ -35,14 +36,14 @@ export class ContactsAddComponent implements OnInit {
 
   getUserById(id: any) {
     this.api.getUserById(id).subscribe((data: any) => {
-       this.user._id= data._id;
+      this.user._id = data._id;
     });
   }
 
   onFormSubmit() {
     this.isLoadingResults = true;
     this.api.addContact(this.contactForm.value, this.user._id).subscribe((res: any) => {
-      this.router.navigate(['/users']);
+      this.router.navigate([`/users/${this.user._id}`]);
     }, (err: any) => {
       console.log(err);
       this.isLoadingResults = false;

@@ -14,7 +14,7 @@ export class UsersListComponent implements OnInit {
   data: Users[] = [];
   isLoadingResults = true;
 
-  constructor(private api: ApiService, private route: Router) { }
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.api.getUsersList().subscribe((res: any) => {
@@ -29,11 +29,10 @@ export class UsersListComponent implements OnInit {
 
   deleteUser(id: any){
     this.api.deleteUser(id).subscribe(res=>{
-      this.route.navigate(['/users']);
+      this.router.navigate(['/users']);
       this.ngOnInit();
     },(err)=>{
       console.log(err);
     });
   }
-
 }

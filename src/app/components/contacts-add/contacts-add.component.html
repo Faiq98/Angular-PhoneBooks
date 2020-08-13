@@ -1,4 +1,4 @@
-<h3>Add New Contact <button class="btn btn-warning" style="float: right;" [routerLink]="['/users']">Back</button></h3><br>
+<h3>Add New Contact <button class="btn btn-warning" style="float: right;" [routerLink]="['/users', user._id]">Back</button></h3><br>
 <hr>
 <div class="container">
     <form [formGroup]="contactForm" (ngSubmit)="onFormSubmit()">

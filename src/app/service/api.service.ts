@@ -66,4 +66,12 @@ export class ApiService {
       catchError(this.handleError<Users>('deleteUser'))
     );
   }
+
+  deleteContact(id: String):Observable<Contacts>{
+    const url = `${apiUrl}/contact/${id}/delete`;
+    return this.http.delete<Contacts>(url, httpOptions).pipe(
+      tap(_=>console.log(`delete contact id=${id}`)),
+      catchError(this.handleError<Contacts>('deleteContact'))
+    );
+  }
 }
