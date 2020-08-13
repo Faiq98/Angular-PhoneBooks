@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ApiService } from '../../service/api.service';
 import { Users } from '../../model/users';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-users-list',
@@ -13,7 +14,7 @@ export class UsersListComponent implements OnInit {
   data: Users[] = [];
   isLoadingResults = true;
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private route: Router) { }
 
   ngOnInit(): void {
     this.api.getUsersList().subscribe((res: any) => {
@@ -23,6 +24,15 @@ export class UsersListComponent implements OnInit {
     }, err =>{
       console.log(err);
       this.isLoadingResults = false;
+    });
+  }
+
+  deleteUser(id: any){
+    this.api.deleteUser(id).subscribe(res=>{
+      this.route.navigate(['/users']);
+      this.ngOnInit();
+    },(err)=>{
+      console.log(err);
     });
   }
 

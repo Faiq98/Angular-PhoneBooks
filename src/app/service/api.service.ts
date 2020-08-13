@@ -44,7 +44,7 @@ export class ApiService {
   }
 
   addUsers(users: Users): Observable<Users>{
-    const url = `${apiUrl}user/signup`;
+    const url = `${apiUrl}/user/signup`;
     return this.http.post<Users>(url, users, httpOptions).pipe(
       tap((u: Users)=>console.log(`Add user`)),
       catchError(this.handleError<Users>('addUser'))
@@ -56,6 +56,14 @@ export class ApiService {
     return this.http.post<Contacts>(url, contacts, httpOptions).pipe(
       tap((c: Contacts)=>console.log(`Add Contact`)),
       catchError(this.handleError<Contacts>('addUser'))
+    );
+  }
+
+  deleteUser(id: String):Observable<Users>{
+    const url = `${apiUrl}/user/${id}/delete`;
+    return this.http.delete<Users>(url,httpOptions).pipe(
+      tap(_=>console.log(`deleted user id=${id}`)),
+      catchError(this.handleError<Users>('deleteUser'))
     );
   }
 }

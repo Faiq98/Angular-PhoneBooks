@@ -6,6 +6,6 @@
         <hr>
     </div>
     <div class="col">
-        <button class="btn btn-primary" [routerLink]="['/users', user._id]">Open</button>&nbsp;<button class="btn btn-danger" [routerLink]="['/users', user._id]">Delete</button>
+        <button class="btn btn-primary" [routerLink]="['/users', user._id]">Open</button>&nbsp;<button class="btn btn-danger" (click)="deleteUser(user._id)" >Delete</button>
     </div>
 </div>
