@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Restful API
 
-- [Node-UserProfileAPI] https://github.com/Faiq98/Node-UserProfileAPI
+- [Node-UserProfileAPI](https://github.com/Faiq98/Node-UserProfileAPI)
 
 ## Development server
 
@@ -16,5 +16,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## References
 
-- [Angular 9 Tutorial Larn to Build a CRUD Angular App Quickly] https://www.djamware.com/post/5e435e84a8d0ef4300ffc5f6/angular-9-tutorial-learn-to-build-a-crud-angular-app-quickly
-- https://www.positronx.io/mean-stack-tutorial-angular-7-crud-bootstrap/
+- [Angular 9 Tutorial Larn to Build a CRUD Angular App Quickly](https://www.djamware.com/post/5e435e84a8d0ef4300ffc5f6/angular-9-tutorial-learn-to-build-a-crud-angular-app-quickly)
+- [Mean Stack Tutorial Angular 7 CRUD Bootstrap](https://www.positronx.io/mean-stack-tutorial-angular-7-crud-bootstrap/)
