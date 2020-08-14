@@ -1,1 +1,36 @@
-<p>users-update works!</p>
+<h3>Update {{user.first_name}} {{user.last_name}} Profile <button class="btn btn-warning" style="float: right;" [routerLink]="['/users', user._id]">Back</button></h3><br>
+<hr>
+<div class="container">
+    <form [formGroup]="usersForm" (ngSubmit)="onFormSubmit()">
+        <div class="row">
+            <div class="col-sm-2">
+                <label>First Name:</label>
+            </div>
+            <div class="col" style="float: left;">
+                <input type="text" formControlName="first_name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Last Name:</label>
+            </div>
+            <div class="col" style="float: left;">
+                <input type="text" formControlName="last_name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <label>Email:</label>
+            </div>
+            <div class="col" style="float: left;">
+                <input type="text" formControlName="email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col">
+                <button class="btn btn-primary" type="submit">Update</button>&nbsp;<button class="btn btn-danger" type="reset">Clear</button>
+            </div>
+        </div>
+    </form>
+</div>

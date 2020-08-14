@@ -59,6 +59,14 @@ export class ApiService {
     );
   }
 
+  updateUser(id:String, user: Users):Observable<any>{
+    const url = `${apiUrl}/user/${id}/update`;
+    return this.http.put(url, user, httpOptions).pipe(
+      tap(_=>console.log(`update user id=${id}`)),
+      catchError(this.handleError<any>('updateUser'))
+    );
+  }
+
   deleteUser(id: String):Observable<Users>{
     const url = `${apiUrl}/user/${id}/delete`;
     return this.http.delete<Users>(url,httpOptions).pipe(
