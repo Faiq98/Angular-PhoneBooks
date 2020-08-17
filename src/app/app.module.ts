@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactsAddComponent } from './components/contacts-add/contacts-add.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactsUpdateComponent } from './components/contacts-update/contacts-update.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UsersDetailsComponent,
     UsersAddComponent,
     UsersUpdateComponent,
-    ContactsAddComponent
+    ContactsAddComponent,
+    ContactsUpdateComponent
   ],
   imports: [
     BrowserModule,

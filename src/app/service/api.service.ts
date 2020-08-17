@@ -43,6 +43,14 @@ export class ApiService {
     );
   }
 
+  getContactById(id: String):Observable<Contacts>{
+    const url = `${apiUrl}/contact/${id}`;
+    return this.http.get<Contacts>(url).pipe(
+      tap(_=>console.log(`fetched contact id=${id}`)),
+      catchError(this.handleError<Contacts>(`getContactById id=${id}`))
+    );
+  }
+
   addUsers(users: Users): Observable<Users>{
     const url = `${apiUrl}/user/signup`;
     return this.http.post<Users>(url, users, httpOptions).pipe(
@@ -64,6 +72,14 @@ export class ApiService {
     return this.http.put(url, user, httpOptions).pipe(
       tap(_=>console.log(`update user id=${id}`)),
       catchError(this.handleError<any>('updateUser'))
+    );
+  }
+
+  updateContact(id: String, contact: Contacts):Observable<any>{
+    const url = `${apiUrl}/contact/${id}/update`;
+    return this.http.put(url, contact, httpOptions).pipe(
+      tap(_=>console.log(`Update contact id=${id}`)),
+      catchError(this.handleError<any>('updateContact'))
     );
   }
 

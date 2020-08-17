@@ -6,6 +6,7 @@ import { UsersDetailsComponent } from './components/users-details/users-details.
 import { UsersAddComponent } from './components/users-add/users-add.component';
 import { UsersUpdateComponent } from './components/users-update/users-update.component';
 import { ContactsAddComponent } from './components/contacts-add/contacts-add.component';
+import { ContactsUpdateComponent } from './components/contacts-update/contacts-update.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
     path: 'users/add-contact/:id',
     component: ContactsAddComponent,
     data: {title: 'Add user contact list'}
+  },
+  {
+    path: 'users/update-contact/:id',
+    component: ContactsUpdateComponent,
+    data: {title: 'Update user contact'}
   },
   {
     path: '',

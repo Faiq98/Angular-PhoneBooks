@@ -13,7 +13,7 @@
         <hr>
     </div>
     <div class="col">
-        <button class="btn btn-primary mb-2">Edit</button><br>
+        <button class="btn btn-primary mb-2" [routerLink]="['/users/update-contact', contact._id]">Edit</button><br>
         <button class="btn btn-danger" (click)="deleteContact(contact._id)" >Delete</button>
     </div>
 </div>
