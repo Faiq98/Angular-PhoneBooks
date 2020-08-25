@@ -1,4 +1,4 @@
-<h3>PhoneBook of {{user.first_name}} {{user.last_name}} <button class="btn btn-warning" style="border-radius: 50px;" [routerLink]="['/update-user', user._id]">Edit</button> <button class="btn btn-warning" style="float: right;" [routerLink]="['/users']">Back</button></h3><br>
+<h3>PhoneBook of {{user.first_name}} {{user.last_name}} <button class="btn btn-warning" style="border-radius: 50px;" [routerLink]="['/update-user', user._id]">Edit</button> <button class="btn btn-warning" style="float: right;" (click)="logout()">Logout</button></h3><br>
 <p>Email: {{user.email}}</p>
 <p>Contacts: <button class="btn btn-warning" [routerLink]="['/users/add-contact', user._id]">Add</button></p>
 <hr>

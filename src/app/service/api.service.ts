@@ -28,6 +28,14 @@ export class ApiService {
     };
   }
 
+  login(users: Users): Observable<Users>{
+    const url = `${apiUrl}/user/login`;
+    return this.http.post<Users>(url, users, httpOptions).pipe(
+      tap((u: Users)=>console.log(`Login Success`)),
+      catchError(this.handleError<Users>('login'))
+    );
+  }
+
   getUsersList(): Observable<Users[]>{
     return this.http.get<Users[]>(`${apiUrl}/user`).pipe(
       tap(users => console.log('fetched users')),

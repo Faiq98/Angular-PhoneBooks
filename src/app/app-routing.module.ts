@@ -7,8 +7,14 @@ import { UsersAddComponent } from './components/users-add/users-add.component';
 import { UsersUpdateComponent } from './components/users-update/users-update.component';
 import { ContactsAddComponent } from './components/contacts-add/contacts-add.component';
 import { ContactsUpdateComponent } from './components/contacts-update/contacts-update.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {title: 'Login'}
+  },
   {
     path: 'users',
     component: UsersListComponent,
@@ -41,7 +47,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/users',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];

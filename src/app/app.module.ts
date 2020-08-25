@@ -14,6 +14,7 @@ import { ContactsAddComponent } from './components/contacts-add/contacts-add.com
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactsUpdateComponent } from './components/contacts-update/contacts-update.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ContactsUpdateComponent } from './components/contacts-update/contacts-u
     UsersAddComponent,
     UsersUpdateComponent,
     ContactsAddComponent,
-    ContactsUpdateComponent
+    ContactsUpdateComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

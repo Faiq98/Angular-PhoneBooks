@@ -38,4 +38,9 @@ export class UsersDetailsComponent implements OnInit {
     });
   }
 
+  logout(){
+    localStorage.removeItem('_id');
+    this.router.navigate(['/']);
+  }
+
 }
